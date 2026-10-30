@@ -227,11 +227,28 @@ export function calculateCourseChance(
     validCuts.push(item.corte);
   });
 
-  const corteProjetado =
+  const mediaPonderada =
     totalWeight > 0 ? Number((sumWeighted / totalWeight).toFixed(2)) : 8.5;
 
   const anoMaisRecente = validCutsWithYear[0]?.ano ?? new Date().getFullYear();
   const corteMaisRecente = validCutsWithYear[0]?.corte ?? 0;
+
+  // Trend Correction with Prudential Floor (Proteção contra Falso Otimismo):
+  // Se a série histórica recente for de ALTA (o corte mais recente subiu vs o anterior),
+  // aplicamos piso no último corte + extrapolação suave de momentum (50% do delta, máx +0.10).
+  // Se a série recente for de queda ou estabilidade, mantemos a média ponderada com decaimento.
+  let corteProjetado = mediaPonderada;
+  if (validCutsWithYear.length >= 2) {
+    const diffRecente = Number((corteMaisRecente - validCutsWithYear[1].corte).toFixed(2));
+    if (diffRecente > 0) {
+      const momentum = Math.min(0.10, Number((diffRecente * 0.5).toFixed(2)));
+      corteProjetado = Math.min(10.0, Number((corteMaisRecente + momentum).toFixed(2)));
+    } else {
+      corteProjetado = mediaPonderada;
+    }
+  } else if (validCutsWithYear.length === 1) {
+    corteProjetado = corteMaisRecente;
+  }
 
   // Volatility calculation (Bayesian-calibrated uncertainty floor for small samples)
   // With n=1 year, variance is undefined; we set an uncertainty floor of 0.27 (0.15 + 0.12).

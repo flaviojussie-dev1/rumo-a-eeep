@@ -51,7 +51,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose, anosTexto }) =>
               1. Base de Dados e Simulação Monte Carlo
             </h4>
             <p className="text-xs text-muted leading-relaxed">
-              O simulador executa <strong>5.000 iterações estocásticas (Método de Monte Carlo)</strong> diretamente no seu navegador para cada curso e cota. O modelo projeta a nota de corte a partir do histórico oficial {anosTexto ? `(${anosTexto})` : 'dos anos anteriores'} das EEEPs de Cascavel, Beberibe e Pindoretama (com maior peso para edições recentes), medindo a volatilidade histórica e simulando o turnover real de vagas na <strong>1ª chamada</strong> e na <strong>lista de espera</strong>.
+              O simulador executa <strong>5.000 iterações estocásticas (Método de Monte Carlo)</strong> diretamente no seu navegador para cada curso e cota. O modelo projeta a nota de corte a partir do histórico oficial {anosTexto ? `(${anosTexto})` : 'dos anos anteriores'} das EEEPs de Cascavel, Beberibe e Pindoretama com <strong>correção prudencial de tendência</strong> (protegendo contra falso otimismo em cursos com alta de concorrência), medindo a volatilidade histórica e simulando o turnover real de vagas na <strong>1ª chamada</strong> e na <strong>lista de espera</strong>.
             </p>
 
             <div className="grid grid-cols-1 gap-2 pt-1">
