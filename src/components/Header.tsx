@@ -18,13 +18,12 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-navy text-white">
       <div className="mx-auto flex max-w-[560px] items-center gap-3 px-4 py-2.5">
-        {/* Brand */}
-        <span
-          aria-hidden="true"
-          className="flex h-9 w-9 flex-none items-center justify-center rounded-[10px] bg-gold font-display text-xl font-extrabold text-navy"
-        >
-          R
-        </span>
+        {/* Brand Icon */}
+        <img
+          src="./icon.svg"
+          alt="Rumo à EEEP"
+          className="h-9 w-9 flex-none rounded-[10px] shadow-sm object-contain"
+        />
         <div className="min-w-0 flex-1">
           <h1 className="font-display text-lg font-bold leading-[1.1] text-white">
             Rumo à EEEP
