@@ -1,0 +1,6 @@
+{
+  "name": "Rumo à EEEP - Simulador de Vagas & Guia Vocacional",
+  "description": "Simulador de chances de aprovação e calculadora de média de histórico escolar para o processo seletivo das Escolas Estaduais de Educação Profissional (EEEPs).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

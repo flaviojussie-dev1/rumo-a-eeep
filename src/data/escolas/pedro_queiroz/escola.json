@@ -1,0 +1,19 @@
+{
+  "id": "pedro_queiroz",
+  "nome": "EEEP Pedro de Queiroz Lima",
+  "municipio": "Beberibe",
+  "crede": "CREDE 09 - Horizonte",
+  "endereco": "Rua Monsenhor Dourado, s/n - Beberibe - CE",
+  "telefone": "(85) 3338-1520",
+  "bairrosProximidade": [
+    "Centro",
+    "Morro Branco",
+    "Praia das Fontes",
+    "Marina",
+    "Choró Vaquejador",
+    "Sucatinga",
+    "Uruaú",
+    "Serra do Félix"
+  ],
+  "tipoBase": "oficial"
+}

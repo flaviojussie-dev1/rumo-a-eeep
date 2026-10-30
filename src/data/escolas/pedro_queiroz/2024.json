@@ -1,0 +1,950 @@
+{
+  "escola": "EEEP PEDRO DE QUEIROZ LIMA",
+  "cidade": "BEBERIBE",
+  "ano_ingresso": 2024,
+  "tipo_resultado": "RESULTADO PRELIMINAR",
+  "cursos": {
+    "agronegocio": {
+      "nome_oficial": "1º AGRONEGÓCIO 2024",
+      "total_classificados": 45,
+      "classificados": {
+        "pub_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_10E200A3",
+            "media": 9.25
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_2A094365",
+            "media": 9.21
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_3CCB17CB",
+            "media": 9.08
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_96BE7720",
+            "media": 9.04
+          },
+          {
+            "posicao": 5,
+            "aluno": "CANDIDATO_33C9431C",
+            "media": 8.95
+          },
+          {
+            "posicao": 6,
+            "aluno": "CANDIDATO_7BF63C65",
+            "media": 8.83
+          },
+          {
+            "posicao": 7,
+            "aluno": "CANDIDATO_74B9FE1C",
+            "media": 8.79
+          },
+          {
+            "posicao": 8,
+            "aluno": "CANDIDATO_965AF5FA",
+            "media": 8.79
+          },
+          {
+            "posicao": 9,
+            "aluno": "CANDIDATO_18E8344C",
+            "media": 8.75
+          },
+          {
+            "posicao": 10,
+            "aluno": "CANDIDATO_687B9543",
+            "media": 8.75
+          },
+          {
+            "posicao": 11,
+            "aluno": "CANDIDATO_9304C0C6",
+            "media": 8.71
+          },
+          {
+            "posicao": 12,
+            "aluno": "CANDIDATO_44C5828F",
+            "media": 8.67
+          },
+          {
+            "posicao": 13,
+            "aluno": "CANDIDATO_46DA299D",
+            "media": 8.63
+          },
+          {
+            "posicao": 14,
+            "aluno": "CANDIDATO_962FDFB1",
+            "media": 8.63
+          },
+          {
+            "posicao": 15,
+            "aluno": "CANDIDATO_B697E023",
+            "media": 8.63
+          },
+          {
+            "posicao": 16,
+            "aluno": "CANDIDATO_C06CE9CA",
+            "media": 8.58
+          },
+          {
+            "posicao": 17,
+            "aluno": "CANDIDATO_AE0CE5A9",
+            "media": 8.56
+          },
+          {
+            "posicao": 18,
+            "aluno": "CANDIDATO_D9E2C94A",
+            "media": 8.54
+          },
+          {
+            "posicao": 19,
+            "aluno": "CANDIDATO_B3E2407A",
+            "media": 8.54
+          },
+          {
+            "posicao": 20,
+            "aluno": "CANDIDATO_22A5A856",
+            "media": 8.5
+          },
+          {
+            "posicao": 21,
+            "aluno": "CANDIDATO_CD2159B7",
+            "media": 8.5
+          },
+          {
+            "posicao": 22,
+            "aluno": "CANDIDATO_48ABB399",
+            "media": 8.5
+          },
+          {
+            "posicao": 23,
+            "aluno": "CANDIDATO_740A4991",
+            "media": 8.5
+          },
+          {
+            "posicao": 24,
+            "aluno": "CANDIDATO_8AF231B5",
+            "media": 8.5
+          },
+          {
+            "posicao": 25,
+            "aluno": "CANDIDATO_64D005A4",
+            "media": 8.48
+          },
+          {
+            "posicao": 26,
+            "aluno": "CANDIDATO_91A50B27",
+            "media": 8.46
+          },
+          {
+            "posicao": 27,
+            "aluno": "CANDIDATO_D0F301A2",
+            "media": 8.43
+          },
+          {
+            "posicao": 28,
+            "aluno": "CANDIDATO_6EF2AE5D",
+            "media": 8.38
+          },
+          {
+            "posicao": 29,
+            "aluno": "CANDIDATO_85DFF2CC",
+            "media": 8.29
+          },
+          {
+            "posicao": 30,
+            "aluno": "CANDIDATO_5E55810E",
+            "media": 8.27
+          },
+          {
+            "posicao": 31,
+            "aluno": "CANDIDATO_782894D6",
+            "media": 8.25
+          },
+          {
+            "posicao": 32,
+            "aluno": "CANDIDATO_551F24D9",
+            "media": 8.25
+          },
+          {
+            "posicao": 33,
+            "aluno": "CANDIDATO_A6EF813A",
+            "media": 8.21
+          },
+          {
+            "posicao": 34,
+            "aluno": "CANDIDATO_A30DA83C",
+            "media": 8.17
+          },
+          {
+            "posicao": 35,
+            "aluno": "CANDIDATO_F7C1EB22",
+            "media": 8.17
+          },
+          {
+            "posicao": 36,
+            "aluno": "CANDIDATO_B170ECC9",
+            "media": 8.13
+          },
+          {
+            "posicao": 37,
+            "aluno": "CANDIDATO_D9624769",
+            "media": 8.13
+          },
+          {
+            "posicao": 38,
+            "aluno": "CANDIDATO_7928708D",
+            "media": 8.13
+          },
+          {
+            "posicao": 39,
+            "aluno": "CANDIDATO_1CC28BF6",
+            "media": 8.13
+          },
+          {
+            "posicao": 40,
+            "aluno": "CANDIDATO_C0258489",
+            "media": 8.08
+          },
+          {
+            "posicao": 41,
+            "aluno": "CANDIDATO_A1F94AEE",
+            "media": 8.08
+          },
+          {
+            "posicao": 42,
+            "aluno": "CANDIDATO_BAA97C36",
+            "media": 8.08
+          },
+          {
+            "posicao": 43,
+            "aluno": "CANDIDATO_30BF115D",
+            "media": 8.04
+          }
+        ],
+        "part_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_2C86A0C4",
+            "media": 9.94
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_FDB12A59",
+            "media": 8.59
+          }
+        ]
+      }
+    },
+    "eletrotecnica": {
+      "nome_oficial": "1º ELETROTÉCNICA 2024",
+      "total_classificados": 45,
+      "classificados": {
+        "pub_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_0B7E7C9F",
+            "media": 9.6
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_B7BD6533",
+            "media": 9.58
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_B854021A",
+            "media": 9.35
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_C6F072AA",
+            "media": 9.29
+          },
+          {
+            "posicao": 5,
+            "aluno": "CANDIDATO_784A1CAB",
+            "media": 9.27
+          },
+          {
+            "posicao": 6,
+            "aluno": "CANDIDATO_B04E6C10",
+            "media": 9.27
+          },
+          {
+            "posicao": 7,
+            "aluno": "CANDIDATO_735E0282",
+            "media": 9.21
+          },
+          {
+            "posicao": 8,
+            "aluno": "CANDIDATO_FD1EF3E2",
+            "media": 9.21
+          },
+          {
+            "posicao": 9,
+            "aluno": "CANDIDATO_861A1BEF",
+            "media": 9.0
+          },
+          {
+            "posicao": 10,
+            "aluno": "CANDIDATO_B9876E40",
+            "media": 8.96
+          },
+          {
+            "posicao": 11,
+            "aluno": "CANDIDATO_80545ADA",
+            "media": 8.83
+          },
+          {
+            "posicao": 12,
+            "aluno": "CANDIDATO_8DD3C418",
+            "media": 8.79
+          },
+          {
+            "posicao": 13,
+            "aluno": "CANDIDATO_98E1C0BC",
+            "media": 8.75
+          },
+          {
+            "posicao": 14,
+            "aluno": "CANDIDATO_DC331BA5",
+            "media": 8.71
+          },
+          {
+            "posicao": 15,
+            "aluno": "CANDIDATO_022ED8F6",
+            "media": 8.71
+          },
+          {
+            "posicao": 16,
+            "aluno": "CANDIDATO_7D42D297",
+            "media": 8.71
+          },
+          {
+            "posicao": 17,
+            "aluno": "CANDIDATO_89EFD8DC",
+            "media": 8.67
+          },
+          {
+            "posicao": 18,
+            "aluno": "CANDIDATO_206B30FB",
+            "media": 8.58
+          },
+          {
+            "posicao": 19,
+            "aluno": "CANDIDATO_AED7FF30",
+            "media": 8.58
+          },
+          {
+            "posicao": 20,
+            "aluno": "CANDIDATO_9B052A5B",
+            "media": 8.5
+          },
+          {
+            "posicao": 21,
+            "aluno": "CANDIDATO_0920D72B",
+            "media": 8.5
+          },
+          {
+            "posicao": 22,
+            "aluno": "CANDIDATO_26632DC4",
+            "media": 8.46
+          },
+          {
+            "posicao": 23,
+            "aluno": "CANDIDATO_19FD10BB",
+            "media": 8.46
+          },
+          {
+            "posicao": 24,
+            "aluno": "CANDIDATO_144613D7",
+            "media": 8.42
+          },
+          {
+            "posicao": 25,
+            "aluno": "CANDIDATO_350889D4",
+            "media": 8.38
+          },
+          {
+            "posicao": 26,
+            "aluno": "CANDIDATO_858A30D6",
+            "media": 8.38
+          },
+          {
+            "posicao": 27,
+            "aluno": "CANDIDATO_F0F44935",
+            "media": 8.21
+          },
+          {
+            "posicao": 28,
+            "aluno": "CANDIDATO_C9CC4B1A",
+            "media": 8.21
+          },
+          {
+            "posicao": 29,
+            "aluno": "CANDIDATO_92734A18",
+            "media": 8.16
+          },
+          {
+            "posicao": 30,
+            "aluno": "CANDIDATO_ED77FE46",
+            "media": 8.13
+          },
+          {
+            "posicao": 31,
+            "aluno": "CANDIDATO_3F6FB4C7",
+            "media": 7.96
+          },
+          {
+            "posicao": 32,
+            "aluno": "CANDIDATO_F7B3165C",
+            "media": 7.96
+          },
+          {
+            "posicao": 33,
+            "aluno": "CANDIDATO_F9945307",
+            "media": 7.92
+          },
+          {
+            "posicao": 34,
+            "aluno": "CANDIDATO_87B4DAE0",
+            "media": 7.9
+          },
+          {
+            "posicao": 35,
+            "aluno": "CANDIDATO_CE369F2D",
+            "media": 7.88
+          },
+          {
+            "posicao": 36,
+            "aluno": "CANDIDATO_F7F6B39C",
+            "media": 7.79
+          },
+          {
+            "posicao": 37,
+            "aluno": "CANDIDATO_F1632ECE",
+            "media": 7.71
+          },
+          {
+            "posicao": 38,
+            "aluno": "CANDIDATO_7BD771C0",
+            "media": 7.71
+          }
+        ],
+        "part_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_A6F037B6",
+            "media": 9.08
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_4940C8F2",
+            "media": 8.52
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_8815227B",
+            "media": 8.25
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_FC46E3CD",
+            "media": 8.21
+          },
+          {
+            "posicao": 5,
+            "aluno": "CANDIDATO_35495DA8",
+            "media": 8.13
+          },
+          {
+            "posicao": 6,
+            "aluno": "CANDIDATO_50822AD1",
+            "media": 8.03
+          },
+          {
+            "posicao": 7,
+            "aluno": "CANDIDATO_6DB14DF2",
+            "media": 7.9
+          }
+        ]
+      }
+    },
+    "edificacoes": {
+      "nome_oficial": "1º EDIFICAÇÕES 2024",
+      "total_classificados": 45,
+      "classificados": {
+        "pub_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_F92A31EF",
+            "media": 9.71
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_6D3E069B",
+            "media": 9.58
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_136C22CA",
+            "media": 9.58
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_E79F5017",
+            "media": 9.54
+          },
+          {
+            "posicao": 5,
+            "aluno": "CANDIDATO_E355185E",
+            "media": 9.54
+          },
+          {
+            "posicao": 6,
+            "aluno": "CANDIDATO_1A7F9401",
+            "media": 9.5
+          },
+          {
+            "posicao": 7,
+            "aluno": "CANDIDATO_A8D9122F",
+            "media": 9.42
+          },
+          {
+            "posicao": 8,
+            "aluno": "CANDIDATO_9D1EBA90",
+            "media": 9.42
+          },
+          {
+            "posicao": 9,
+            "aluno": "CANDIDATO_8F28979F",
+            "media": 9.29
+          },
+          {
+            "posicao": 10,
+            "aluno": "CANDIDATO_FAC35809",
+            "media": 9.21
+          },
+          {
+            "posicao": 11,
+            "aluno": "CANDIDATO_8573852F",
+            "media": 9.17
+          },
+          {
+            "posicao": 12,
+            "aluno": "CANDIDATO_F86C7D07",
+            "media": 9.17
+          },
+          {
+            "posicao": 13,
+            "aluno": "CANDIDATO_9E67F04E",
+            "media": 9.15
+          },
+          {
+            "posicao": 14,
+            "aluno": "CANDIDATO_2CFD1FA8",
+            "media": 9.1
+          },
+          {
+            "posicao": 15,
+            "aluno": "CANDIDATO_80168A9D",
+            "media": 9.08
+          },
+          {
+            "posicao": 16,
+            "aluno": "CANDIDATO_EC80B85A",
+            "media": 9.08
+          },
+          {
+            "posicao": 17,
+            "aluno": "CANDIDATO_D18AD412",
+            "media": 9.0
+          },
+          {
+            "posicao": 18,
+            "aluno": "CANDIDATO_77C28E87",
+            "media": 8.98
+          },
+          {
+            "posicao": 19,
+            "aluno": "CANDIDATO_27BF12F6",
+            "media": 8.96
+          },
+          {
+            "posicao": 20,
+            "aluno": "CANDIDATO_9F7BD1D2",
+            "media": 8.96
+          },
+          {
+            "posicao": 21,
+            "aluno": "CANDIDATO_C14E6F69",
+            "media": 8.92
+          },
+          {
+            "posicao": 22,
+            "aluno": "CANDIDATO_19821A6B",
+            "media": 8.88
+          },
+          {
+            "posicao": 23,
+            "aluno": "CANDIDATO_1652D380",
+            "media": 8.88
+          },
+          {
+            "posicao": 24,
+            "aluno": "CANDIDATO_AAAB57EA",
+            "media": 8.83
+          },
+          {
+            "posicao": 25,
+            "aluno": "CANDIDATO_188EF5A3",
+            "media": 8.83
+          },
+          {
+            "posicao": 26,
+            "aluno": "CANDIDATO_79A0007E",
+            "media": 8.83
+          },
+          {
+            "posicao": 27,
+            "aluno": "CANDIDATO_8BBF88C3",
+            "media": 8.79
+          },
+          {
+            "posicao": 28,
+            "aluno": "CANDIDATO_9637B95A",
+            "media": 8.75
+          },
+          {
+            "posicao": 29,
+            "aluno": "CANDIDATO_2F8601A2",
+            "media": 8.71
+          },
+          {
+            "posicao": 30,
+            "aluno": "CANDIDATO_77A688FF",
+            "media": 8.67
+          },
+          {
+            "posicao": 31,
+            "aluno": "CANDIDATO_2587FCCF",
+            "media": 8.67
+          },
+          {
+            "posicao": 32,
+            "aluno": "CANDIDATO_11F5F30A",
+            "media": 8.62
+          },
+          {
+            "posicao": 33,
+            "aluno": "CANDIDATO_26B96B13",
+            "media": 8.58
+          },
+          {
+            "posicao": 34,
+            "aluno": "CANDIDATO_7B9065E0",
+            "media": 8.58
+          },
+          {
+            "posicao": 35,
+            "aluno": "CANDIDATO_D794ECB0",
+            "media": 8.58
+          }
+        ],
+        "part_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_D5CC0E67",
+            "media": 9.54
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_83ABAE16",
+            "media": 9.25
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_A206594C",
+            "media": 9.25
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_7EF26B67",
+            "media": 8.7
+          },
+          {
+            "posicao": 5,
+            "aluno": "CANDIDATO_C5308C7F",
+            "media": 8.7
+          },
+          {
+            "posicao": 6,
+            "aluno": "CANDIDATO_4F6356B3",
+            "media": 8.5
+          },
+          {
+            "posicao": 7,
+            "aluno": "CANDIDATO_12D88C91",
+            "media": 8.23
+          },
+          {
+            "posicao": 8,
+            "aluno": "CANDIDATO_7B609702",
+            "media": 8.23
+          },
+          {
+            "posicao": 9,
+            "aluno": "CANDIDATO_0BB04ACD",
+            "media": 7.71
+          },
+          {
+            "posicao": 10,
+            "aluno": "CANDIDATO_F91E7A2D",
+            "media": 7.71
+          }
+        ]
+      }
+    },
+    "hospedagem": {
+      "nome_oficial": "1º HOSPEDAGEM 2024",
+      "total_classificados": 45,
+      "classificados": {
+        "pub_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_D82A66A0",
+            "media": 9.21
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_A7581708",
+            "media": 9.07
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_FA03B79B",
+            "media": 9.04
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_8350B657",
+            "media": 8.88
+          },
+          {
+            "posicao": 5,
+            "aluno": "CANDIDATO_E217E8B0",
+            "media": 8.67
+          },
+          {
+            "posicao": 6,
+            "aluno": "CANDIDATO_6BE8254E",
+            "media": 8.58
+          },
+          {
+            "posicao": 7,
+            "aluno": "CANDIDATO_395D0789",
+            "media": 8.54
+          },
+          {
+            "posicao": 8,
+            "aluno": "CANDIDATO_28B24DFA",
+            "media": 8.5
+          },
+          {
+            "posicao": 9,
+            "aluno": "CANDIDATO_470A7C24",
+            "media": 8.46
+          },
+          {
+            "posicao": 10,
+            "aluno": "CANDIDATO_B7D020FA",
+            "media": 8.38
+          },
+          {
+            "posicao": 11,
+            "aluno": "CANDIDATO_84F85FB7",
+            "media": 8.33
+          },
+          {
+            "posicao": 12,
+            "aluno": "CANDIDATO_B96F5946",
+            "media": 8.31
+          },
+          {
+            "posicao": 13,
+            "aluno": "CANDIDATO_7CCB355E",
+            "media": 8.25
+          },
+          {
+            "posicao": 14,
+            "aluno": "CANDIDATO_0DC168DC",
+            "media": 8.17
+          },
+          {
+            "posicao": 15,
+            "aluno": "CANDIDATO_C3C9E1C5",
+            "media": 8.13
+          },
+          {
+            "posicao": 16,
+            "aluno": "CANDIDATO_DAD5779A",
+            "media": 8.08
+          },
+          {
+            "posicao": 17,
+            "aluno": "CANDIDATO_0A36B1B3",
+            "media": 8.04
+          },
+          {
+            "posicao": 18,
+            "aluno": "CANDIDATO_9904189F",
+            "media": 8.04
+          },
+          {
+            "posicao": 19,
+            "aluno": "CANDIDATO_A71EF295",
+            "media": 8.0
+          },
+          {
+            "posicao": 20,
+            "aluno": "CANDIDATO_6555DBE9",
+            "media": 8.0
+          },
+          {
+            "posicao": 21,
+            "aluno": "CANDIDATO_11CA1C9B",
+            "media": 7.96
+          },
+          {
+            "posicao": 22,
+            "aluno": "CANDIDATO_EBB8A3C4",
+            "media": 7.92
+          },
+          {
+            "posicao": 23,
+            "aluno": "CANDIDATO_96E9B299",
+            "media": 7.92
+          },
+          {
+            "posicao": 24,
+            "aluno": "CANDIDATO_F3C709A9",
+            "media": 7.85
+          },
+          {
+            "posicao": 25,
+            "aluno": "CANDIDATO_F1EF0B4D",
+            "media": 7.79
+          },
+          {
+            "posicao": 26,
+            "aluno": "CANDIDATO_14756367",
+            "media": 7.71
+          },
+          {
+            "posicao": 27,
+            "aluno": "CANDIDATO_54D23E97",
+            "media": 7.67
+          },
+          {
+            "posicao": 28,
+            "aluno": "CANDIDATO_E75E680A",
+            "media": 7.65
+          },
+          {
+            "posicao": 29,
+            "aluno": "CANDIDATO_88C30C4B",
+            "media": 7.63
+          },
+          {
+            "posicao": 30,
+            "aluno": "CANDIDATO_F5D42AA7",
+            "media": 7.58
+          },
+          {
+            "posicao": 31,
+            "aluno": "CANDIDATO_CC4334FB",
+            "media": 7.5
+          },
+          {
+            "posicao": 32,
+            "aluno": "CANDIDATO_CFE02301",
+            "media": 7.5
+          },
+          {
+            "posicao": 33,
+            "aluno": "CANDIDATO_F23035D1",
+            "media": 7.5
+          },
+          {
+            "posicao": 34,
+            "aluno": "CANDIDATO_7F30C0BC",
+            "media": 7.46
+          },
+          {
+            "posicao": 35,
+            "aluno": "CANDIDATO_C3326A41",
+            "media": 7.42
+          },
+          {
+            "posicao": 36,
+            "aluno": "CANDIDATO_901E8E49",
+            "media": 7.42
+          },
+          {
+            "posicao": 37,
+            "aluno": "CANDIDATO_F8E04B0D",
+            "media": 7.35
+          },
+          {
+            "posicao": 38,
+            "aluno": "CANDIDATO_A38533BD",
+            "media": 7.31
+          },
+          {
+            "posicao": 39,
+            "aluno": "CANDIDATO_C4D50585",
+            "media": 7.29
+          }
+        ],
+        "part_ampla": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_71DB38FA",
+            "media": 8.3
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_F56DDF27",
+            "media": 8.04
+          },
+          {
+            "posicao": 3,
+            "aluno": "CANDIDATO_95C8D80B",
+            "media": 7.85
+          },
+          {
+            "posicao": 4,
+            "aluno": "CANDIDATO_08A569E6",
+            "media": 6.91
+          }
+        ],
+        "pcd": [
+          {
+            "posicao": 1,
+            "aluno": "CANDIDATO_046F7A7B",
+            "media": 7.66
+          },
+          {
+            "posicao": 2,
+            "aluno": "CANDIDATO_DAE19727",
+            "media": 6.42
+          }
+        ]
+      }
+    }
+  }
+}

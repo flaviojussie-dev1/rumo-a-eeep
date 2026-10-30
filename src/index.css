@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/*
+  Tokens de design — extraídos do protótipo oficial (Simulador (mobile)-html/Main.dc.html)
+  Navy/Gold flat, coluna única mobile-first.
+*/
+@theme {
+  --color-navy: #13294b;
+  --color-navy-2: #1e3a66;
+  --color-gold: #ffc93c;
+  --color-page: #eef2f6;
+  --color-surface: #ffffff;
+  --color-field: #f7f9fc;
+  --color-ink: #13294b;
+  --color-muted: #4a576b;
+  --color-muted-2: #3b4a60;
+  --color-line: #e3e8ef;
+  --color-line-strong: #8a95a6;
+  --color-track: #dde3ec;
+  --color-focus: #2f6bff;
+  /* Níveis de chance */
+  --color-folgado-bg: #ddf3e9;
+  --color-folgado-fg: #0b5f45;
+  --color-folgado-fill: #2f9e75;
+  --color-provavel-bg: #e4ecff;
+  --color-provavel-fg: #1a45b8;
+  --color-provavel-fill: #4c7bf0;
+  --color-disputa-bg: #ffe8c7;
+  --color-disputa-fg: #7a3a00;
+  --color-disputa-fill: #e8962a;
+  --color-abaixo-bg: #ffe1e6;
+  --color-abaixo-fg: #9b1329;
+  --color-abaixo-fill: #dc4a63;
+
+  --font-display: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    background: var(--color-page);
+    font-family: var(--font-body);
+    color: var(--color-ink);
+  }
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+  input[type="range"] {
+    accent-color: var(--color-navy);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "edson_queiroz",
+  "nome": "EEEP Edson Queiroz",
+  "municipio": "Cascavel",
+  "crede": "CREDE 09 - Horizonte",
+  "endereco": "Av. Chanceler Edson Queiroz, s/n - Cascavel - CE",
+  "telefone": "(85) 3334-2900",
+  "bairrosProximidade": [
+    "Alto Luminoso",
+    "Centro",
+    "Mutirão",
+    "Rio Novo"
+  ],
+  "tipoBase": "oficial"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "jose_carlos_reboucas",
+  "nome": "EEEP Prof. José Carlos Rebouças",
+  "municipio": "Pindoretama",
+  "crede": "CREDE 09 - Horizonte",
+  "endereco": "Rodovia CE-040, km 48 - Pindoretama - CE",
+  "telefone": "(85) 3375-1040",
+  "bairrosProximidade": [
+    "Centro",
+    "Capim de Roça",
+    "Pratiús",
+    "Ema",
+    "Sítio Ema",
+    "Sítio Juazeiro",
+    "Sítio Coqueiro",
+    "Bastiões"
+  ],
+  "tipoBase": "oficial"
+}
