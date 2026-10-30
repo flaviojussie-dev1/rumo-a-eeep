@@ -292,21 +292,19 @@ export default function App() {
         onClose={() => setSelectedCourseDetail(null)}
       />
 
-      {/* Rodapé Dark Navy Ultra-Slim Fixo */}
+      {/* Rodapé Dark Navy Ultra-Slim Fixo Centralizado */}
       <footer className="fixed bottom-0 left-0 right-0 z-40 w-full bg-navy/95 backdrop-blur-xs py-1.5 border-t border-navy-2 text-white shadow-lg">
-        <div className="mx-auto flex max-w-[560px] items-center justify-between px-4 text-[11px] text-[#C5D2E6]">
-          <div className="flex items-center gap-1.5 min-w-0">
-            <GraduationCap className="h-3.5 w-3.5 text-gold flex-none" />
-            <span className="truncate">
-              Desenvolvido por: <strong className="font-semibold text-white">Prof. Me. Flávio Jussiê</strong>
-            </span>
-          </div>
+        <div className="mx-auto flex max-w-[560px] items-center justify-center gap-1.5 px-4 text-[11px] text-[#C5D2E6]">
+          <GraduationCap className="h-3.5 w-3.5 text-gold flex-none" />
+          <span className="truncate">
+            Desenvolvido por: <strong className="font-semibold text-white">Prof. Me. Flávio Jussiê</strong>
+          </span>
           <button
             type="button"
             onClick={() => setIsAboutOpen(true)}
             aria-label="Informações sobre estimativas e privacidade"
             title="Como calculamos as estimativas"
-            className="flex h-5 w-5 items-center justify-center rounded-full text-[#C5D2E6] hover:text-white hover:bg-white/20 transition active:scale-95 flex-none ml-2"
+            className="flex h-5 w-5 items-center justify-center rounded-full text-[#C5D2E6] hover:text-white hover:bg-white/20 transition active:scale-95 flex-none"
           >
             <HelpCircle className="h-3 w-3 text-gold" />
           </button>
