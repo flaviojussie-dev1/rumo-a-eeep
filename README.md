@@ -2,7 +2,7 @@
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
 
-# 🧭 Rumo à EEEP — Simulador de Vagas & Guia Vocacional
+# 🧭 Rumo à EEEP — Simulador de Vagas
 
 Simulador de chances de aprovação e calculadora de média de histórico escolar para o processo seletivo das **Escolas Estaduais de Educação Profissional (EEEPs)** do Ceará.
 

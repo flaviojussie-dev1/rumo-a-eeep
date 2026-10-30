@@ -15,7 +15,7 @@ export default defineConfig(() => {
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg', 'pwa-192x192.png', 'pwa-512x512.png'],
         manifest: {
           id: './',
-          name: 'Rumo à EEEP - Simulador de Vagas & Guia Vocacional',
+          name: 'Rumo à EEEP - Simulador de Vagas',
           short_name: 'Rumo à EEEP',
           description: 'Simulador de aprovação e calculadora de média para o processo seletivo das EEEPs Ceará.',
           theme_color: '#13294B',
