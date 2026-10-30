@@ -228,30 +228,44 @@ export const ProfileSelector: React.FC<ProfileSelectorProps> = ({
 
       {/* Cota de Proximidade */}
       {perfil.municipioResidencia !== 'outro' && escolaDoMunicipio && (
-        <div className="mt-5 rounded-[14px] border-[1.5px] border-line bg-page p-4">
-          <div className="text-[15px] font-semibold text-ink">
-            Você mora em bairro da cota de proximidade?
-          </div>
-          <p className="mt-1 text-[13px] leading-snug text-muted">
-            O edital da {escolaDoMunicipio.nome} destina cotas exclusivas (~25% das vagas) para estudantes dos bairros do entorno de {escolaDoMunicipio.municipio}.
-          </p>
-          <div className="mt-2.5 grid grid-cols-3 gap-2">
-            {(
-              [
-                { key: true, label: 'Sim' },
-                { key: false, label: 'Não' },
-              ] as { key: boolean; label: string }[]
-            ).map((op) => (
-              <button
-                key={String(op.key)}
-                type="button"
-                aria-pressed={perfil.moraProximidade === op.key}
-                onClick={() => onChangePerfil({ moraProximidade: op.key })}
-                className={chip(perfil.moraProximidade === op.key)}
-              >
-                {op.label}
-              </button>
-            ))}
+        <div
+          onClick={() => onChangePerfil({ moraProximidade: !perfil.moraProximidade })}
+          className={`mt-5 rounded-[14px] border-[1.5px] p-4 cursor-pointer transition-all ${
+            perfil.moraProximidade
+              ? 'border-navy bg-navy/5 shadow-xs'
+              : 'border-line bg-page hover:border-line-strong'
+          }`}
+        >
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <div className="text-[15px] font-semibold text-ink">
+                Você mora em bairro da cota de proximidade?
+              </div>
+              <p className="mt-1 text-[13px] leading-snug text-muted">
+                O edital da {escolaDoMunicipio.nome} destina cotas exclusivas (~25% das vagas) para estudantes dos bairros do entorno de {escolaDoMunicipio.municipio}.
+              </p>
+            </div>
+            {/* Single Toggle Switch */}
+            <button
+              type="button"
+              role="switch"
+              aria-checked={perfil.moraProximidade}
+              aria-label="Ativar cota de proximidade"
+              onClick={(e) => {
+                e.stopPropagation();
+                onChangePerfil({ moraProximidade: !perfil.moraProximidade });
+              }}
+              className={`relative inline-flex h-7 w-12 flex-none cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                perfil.moraProximidade ? 'bg-navy' : 'bg-gray-300'
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                  perfil.moraProximidade ? 'translate-x-5' : 'translate-x-0'
+                }`}
+              />
+            </button>
           </div>
           <p className="mt-2.5 flex items-start gap-1.5 text-[13px] leading-snug text-muted">
             <Info className="mt-0.5 h-3.5 w-3.5 flex-none text-line-strong" />
@@ -270,8 +284,15 @@ export const ProfileSelector: React.FC<ProfileSelectorProps> = ({
       )}
 
       {/* PCD */}
-      <div className="mt-5 flex items-center justify-between gap-3 rounded-[14px] border-[1.5px] border-line bg-page p-3.5">
-        <div className="min-w-0">
+      <div
+        onClick={() => onChangePerfil({ isPCD: !perfil.isPCD })}
+        className={`mt-5 flex items-center justify-between gap-3 rounded-[14px] border-[1.5px] p-3.5 cursor-pointer transition-all ${
+          perfil.isPCD
+            ? 'border-navy bg-navy/5 shadow-xs'
+            : 'border-line bg-page hover:border-line-strong'
+        }`}
+      >
+        <div className="min-w-0 flex-1">
           <span className="flex items-center gap-1.5 text-[15px] font-semibold text-ink">
             <Accessibility className="h-4 w-4 text-navy" />
             Candidato com deficiência (PCD)
@@ -280,24 +301,27 @@ export const ProfileSelector: React.FC<ProfileSelectorProps> = ({
             2 vagas reservadas por turma, com laudo médico.
           </p>
         </div>
-        <div className="flex flex-none items-center gap-2">
-          <button
-            type="button"
-            aria-pressed={!perfil.isPCD}
-            onClick={() => onChangePerfil({ isPCD: false })}
-            className={chip(!perfil.isPCD) + ' px-4'}
-          >
-            Não
-          </button>
-          <button
-            type="button"
-            aria-pressed={perfil.isPCD}
-            onClick={() => onChangePerfil({ isPCD: true })}
-            className={chip(perfil.isPCD) + ' px-4'}
-          >
-            Sim
-          </button>
-        </div>
+        {/* Single Toggle Switch */}
+        <button
+          type="button"
+          role="switch"
+          aria-checked={perfil.isPCD}
+          aria-label="Ativar cota PCD"
+          onClick={(e) => {
+            e.stopPropagation();
+            onChangePerfil({ isPCD: !perfil.isPCD });
+          }}
+          className={`relative inline-flex h-7 w-12 flex-none cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+            perfil.isPCD ? 'bg-navy' : 'bg-gray-300'
+          }`}
+        >
+          <span
+            aria-hidden="true"
+            className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+              perfil.isPCD ? 'translate-x-5' : 'translate-x-0'
+            }`}
+          />
+        </button>
       </div>
     </section>
   );
