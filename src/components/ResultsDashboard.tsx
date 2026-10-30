@@ -167,8 +167,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
 
         {hasNota && (
           <div className={`flex items-start gap-2 p-2.5 rounded-[12px] text-xs leading-relaxed border ${totalBons === 0 && disputaCount === 0
-              ? 'bg-amber-50/70 border-amber-200/60 text-amber-900'
-              : 'bg-blue-50/70 border-blue-200/60 text-blue-900'
+            ? 'bg-amber-50/70 border-amber-200/60 text-amber-900'
+            : 'bg-blue-50/70 border-blue-200/60 text-blue-900'
             }`}>
             <Info className={`w-4 h-4 flex-none mt-0.5 ${totalBons === 0 && disputaCount === 0 ? 'text-amber-600' : 'text-blue-600'
               }`} />
@@ -201,11 +201,10 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                 </div>
                 <div className="flex-none text-right">
                   <span
-                    className={`inline-flex items-center font-bold px-2.5 py-1 rounded-full text-xs border ${
-                      oracle.melhorNaCidade.probabilidade >= 60
+                    className={`inline-flex items-center font-bold px-2.5 py-1 rounded-full text-xs border ${oracle.melhorNaCidade.probabilidade >= 60
                         ? 'bg-emerald-50 text-folgado-fg border-emerald-200/60'
                         : 'bg-amber-50 text-disputa-fg border-amber-200/60'
-                    }`}
+                      }`}
                   >
                     {oracle.melhorNaCidade.probabilidade}% chance
                   </span>
@@ -295,8 +294,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
             type="button"
             onClick={() => setActiveTab('todas')}
             className={`min-h-[50px] p-2 rounded-[14px] border-[1.5px] transition flex flex-col items-center justify-center text-center ${activeTab === 'todas'
-                ? 'border-navy bg-navy text-white shadow-xs font-bold'
-                : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
+              ? 'border-navy bg-navy text-white shadow-xs font-bold'
+              : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
               }`}
           >
             <span className="text-xs sm:text-sm font-bold leading-tight">Todas as EEEPs</span>
@@ -307,8 +306,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
             type="button"
             onClick={() => setActiveTab('edson_queiroz')}
             className={`min-h-[50px] p-2 rounded-[14px] border-[1.5px] transition flex flex-col items-center justify-center text-center ${activeTab === 'edson_queiroz'
-                ? 'border-navy bg-navy text-white shadow-xs font-bold'
-                : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
+              ? 'border-navy bg-navy text-white shadow-xs font-bold'
+              : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
               }`}
           >
             <span className="text-xs sm:text-sm font-bold leading-tight">Cascavel</span>
@@ -319,8 +318,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
             type="button"
             onClick={() => setActiveTab('pedro_queiroz')}
             className={`min-h-[50px] p-2 rounded-[14px] border-[1.5px] transition flex flex-col items-center justify-center text-center ${activeTab === 'pedro_queiroz'
-                ? 'border-navy bg-navy text-white shadow-xs font-bold'
-                : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
+              ? 'border-navy bg-navy text-white shadow-xs font-bold'
+              : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
               }`}
           >
             <span className="text-xs sm:text-sm font-bold leading-tight">Beberibe</span>
@@ -331,8 +330,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
             type="button"
             onClick={() => setActiveTab('jose_carlos_reboucas')}
             className={`min-h-[50px] p-2 rounded-[14px] border-[1.5px] transition flex flex-col items-center justify-center text-center ${activeTab === 'jose_carlos_reboucas'
-                ? 'border-navy bg-navy text-white shadow-xs font-bold'
-                : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
+              ? 'border-navy bg-navy text-white shadow-xs font-bold'
+              : 'border-line-strong bg-page/60 text-ink hover:border-navy hover:bg-page'
               }`}
           >
             <span className="text-xs sm:text-sm font-bold leading-tight">Pindoretama</span>
@@ -349,8 +348,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                 onClick={() => setFilter('todos')}
                 aria-pressed={filter === 'todos'}
                 className={`min-h-[38px] rounded-full border-[1.5px] px-2 text-xs font-semibold transition flex items-center justify-center ${filter === 'todos'
-                    ? 'border-navy bg-navy text-white font-bold'
-                    : 'border-line-strong bg-page/60 text-navy hover:border-navy hover:bg-page'
+                  ? 'border-navy bg-navy text-white font-bold'
+                  : 'border-line-strong bg-page/60 text-navy hover:border-navy hover:bg-page'
                   }`}
               >
                 Todos · {displayedResults.length}
@@ -360,8 +359,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                 onClick={() => setFilter('altas')}
                 aria-pressed={filter === 'altas'}
                 className={`min-h-[38px] rounded-full border-[1.5px] px-2 text-xs font-semibold transition flex items-center justify-center ${filter === 'altas'
-                    ? 'border-navy bg-navy text-white font-bold'
-                    : 'border-line-strong bg-page/60 text-navy hover:border-navy hover:bg-page'
+                  ? 'border-navy bg-navy text-white font-bold'
+                  : 'border-line-strong bg-page/60 text-navy hover:border-navy hover:bg-page'
                   }`}
               >
                 Boas chances · {displayedResults.filter((r) => r.probabilidade >= 60).length}
@@ -371,8 +370,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                 onClick={() => setFilter('disputa')}
                 aria-pressed={filter === 'disputa'}
                 className={`min-h-[38px] rounded-full border-[1.5px] px-2 text-xs font-semibold transition flex items-center justify-center ${filter === 'disputa'
-                    ? 'border-navy bg-navy text-white font-bold'
-                    : 'border-line-strong bg-page/60 text-navy hover:border-navy hover:bg-page'
+                  ? 'border-navy bg-navy text-white font-bold'
+                  : 'border-line-strong bg-page/60 text-navy hover:border-navy hover:bg-page'
                   }`}
               >
                 Chance moderada · {displayedResults.filter((r) => r.probabilidade >= 25 && r.probabilidade < 60).length}
@@ -388,8 +387,8 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
             type="button"
             onClick={() => setActiveTab(activeTab === 'comparador' ? 'todas' : 'comparador')}
             className={`min-h-[38px] px-3.5 rounded-full border-[1.5px] text-xs font-semibold transition flex items-center justify-center gap-1.5 shrink-0 ${activeTab === 'comparador'
-                ? 'border-navy bg-navy text-white font-bold shadow-xs'
-                : 'border-line bg-page/60 text-muted hover:border-line-strong hover:text-ink'
+              ? 'border-navy bg-navy text-white font-bold shadow-xs'
+              : 'border-line bg-page/60 text-muted hover:border-line-strong hover:text-ink'
               }`}
           >
             <BarChart3 className="w-3.5 h-3.5" />
@@ -503,10 +502,10 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                             </td>
                             <td
                               className={`p-3 text-center font-bold ${hasNota
-                                  ? item.delta >= 0
-                                    ? 'text-folgado-fg'
-                                    : 'text-abaixo-fg'
-                                  : 'text-muted font-normal'
+                                ? item.delta >= 0
+                                  ? 'text-folgado-fg'
+                                  : 'text-abaixo-fg'
+                                : 'text-muted font-normal'
                                 }`}
                             >
                               {hasNota
@@ -813,12 +812,12 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                             </p>
                           )}
                           {item.alertaCorteRecenteSuperior && (
-                            <div className="mt-2 p-2.5 rounded-[12px] bg-amber-50 border border-amber-200/80 text-amber-900 text-[11px] leading-relaxed flex items-start gap-2">
-                              <AlertTriangle className="w-4 h-4 text-amber-600 flex-none mt-0.5" />
+                            <div className="mt-2 p-2.5 rounded-[12px] bg-blue-50/70 border border-blue-200/80 text-blue-950 text-[11px] leading-relaxed flex items-start gap-2">
+                              <AlertTriangle className="w-4 h-4 text-blue-600 flex-none mt-0.5" />
                               <div>
-                                <strong className="font-bold text-amber-950">Atenção ao último processo seletivo:</strong>{' '}
-                                Em {item.anoMaisRecente}, a nota de corte subiu para{' '}
-                                <strong>{item.corteMaisRecente.toFixed(2).replace('.', ',')}</strong> (+{item.diferencaRecenteProjetado.toFixed(2).replace('.', ',')} em relação à média). Recomenda-se considerar essa nota mais recente como referência segura.
+                                <strong className="font-bold text-blue-900">Piso de prudência aplicado:</strong>{' '}
+                                Em {item.anoMaisRecente}, a nota de corte foi{' '}
+                                <strong>{item.corteMaisRecente.toFixed(2).replace('.', ',')}</strong> (+{item.diferencaRecenteProjetado.toFixed(2).replace('.', ',')} em relação à média ponderada). O modelo adotou essa nota como piso inviolável na projeção para proteger contra falso otimismo.
                               </div>
                             </div>
                           )}
@@ -829,6 +828,32 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                             </div>
                           )}
                         </div>
+
+                        {/* 3-Tier Conservative Reference Range (Monte Carlo) */}
+                        {item.notaMinimaEspera !== undefined && item.notaSegura !== undefined && (
+                          <div className="mt-2.5 rounded-[12px] bg-page/70 p-2.5 border border-line text-xs space-y-1.5">
+                            <div className="flex items-center justify-between font-bold text-muted text-[10px] uppercase tracking-wider">
+                              <span>Faixa de Referência (Monte Carlo · 5.000 Cenários)</span>
+                            </div>
+                            <div className="grid grid-cols-3 gap-1.5 text-center">
+                              <div className="rounded-[8px] bg-white p-2 border border-line flex flex-col justify-between">
+                                <span className="text-[10px] text-muted block leading-tight mb-1">Limiar Espera (≥25%)</span>
+                                <strong className="text-ink font-bold text-xs">{item.notaMinimaEspera.toFixed(2).replace('.', ',')}</strong>
+                              </div>
+                              <div className="rounded-[8px] bg-white p-2 border border-line flex flex-col justify-between">
+                                <span className="text-[10px] text-muted block leading-tight mb-1">Corte Estimado</span>
+                                <strong className="text-navy font-bold text-xs">{item.corteProjetado.toFixed(2).replace('.', ',')}</strong>
+                              </div>
+                              <div className="rounded-[8px] bg-emerald-50/80 p-2 border border-emerald-200/80 flex flex-col justify-between">
+                                <span className="text-[10px] text-emerald-800 font-semibold block leading-tight mb-1">Nota Segura (≥85%)</span>
+                                <strong className="text-emerald-700 font-bold text-xs">{item.notaSegura.toFixed(2).replace('.', ',')}</strong>
+                              </div>
+                            </div>
+                            <p className="text-[10px] text-muted leading-tight pt-0.5">
+                              💡 <strong>Limiar Espera:</strong> nota onde surgem chances reais na lista. <strong>Nota Segura:</strong> margem de segurança para aprovação direta na 1ª chamada.
+                            </p>
+                          </div>
+                        )}
 
                         {/* Estimated placement */}
                         {hasNota && (item.colocacaoEmpirica || item.colocacaoProjetada) && (
@@ -846,7 +871,7 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                             {item.colocacaoEmpirica && item.colocacaoProjetada && (
                               <>; na projeção do próximo processo, por volta da {item.colocacaoProjetada.mediana}º posição{item.colocacaoProjetada.p25 !== item.colocacaoProjetada.p75 && ` (faixa provável: ${item.colocacaoProjetada.p25}º–${item.colocacaoProjetada.p75}º)`}</>
                             )}
-                            . Posição entre os convocados — quem está abaixo do corte fica para a lista de espera.
+                            . Posição entre os convocados, quem está abaixo do corte fica para a lista de espera.
                           </div>
                         )}
 

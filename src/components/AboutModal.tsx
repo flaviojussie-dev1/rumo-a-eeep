@@ -51,8 +51,20 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose, anosTexto }) =>
               1. Base de Dados e Simulação Monte Carlo
             </h4>
             <p className="text-xs text-muted leading-relaxed">
-              O simulador executa <strong>5.000 iterações estocásticas (Método de Monte Carlo)</strong> diretamente no seu navegador para cada curso e cota. O modelo projeta a nota de corte a partir do histórico oficial {anosTexto ? `(${anosTexto})` : 'dos anos anteriores'} das EEEPs de Cascavel, Beberibe e Pindoretama com <strong>correção prudencial de tendência</strong> (protegendo contra falso otimismo em cursos com alta de concorrência), medindo a volatilidade histórica e simulando o turnover real de vagas na <strong>1ª chamada</strong> e na <strong>lista de espera</strong>.
+              O simulador executa <strong>5.000 iterações estocásticas (Método de Monte Carlo)</strong> diretamente no seu navegador para cada curso e cota. O modelo projeta a nota de corte a partir do histórico oficial {anosTexto ? `(${anosTexto})` : 'dos anos anteriores'} das EEEPs de Cascavel, Beberibe e Pindoretama com <strong>piso prudencial inviolável</strong> (a estimativa nunca fica abaixo do último edital realizado, protegendo contra falso otimismo) e calcula três referências seguras:
             </p>
+
+            <div className="grid grid-cols-1 gap-1.5 pt-1">
+              <div className="rounded-xl bg-page p-2 border border-line text-xs">
+                <strong className="text-ink">1. Limiar de Espera (≥ 25%):</strong> nota mínima para ter viabilidade matemática real em vagas remanescentes e desistências.
+              </div>
+              <div className="rounded-xl bg-page p-2 border border-line text-xs">
+                <strong className="text-navy">2. Corte Estimado:</strong> valor de referência com piso no último edital e ponderação histórica.
+              </div>
+              <div className="rounded-xl bg-emerald-50/80 p-2 border border-emerald-200/80 text-xs">
+                <strong className="text-emerald-800">3. Nota Segura (≥ 85%):</strong> nota em que 85% dos cenários simulados garantem aprovação direta na 1ª chamada.
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 gap-2 pt-1">
               <div className="rounded-xl bg-[#ddf3e9]/70 p-2.5 border border-[#c1e7d6] text-xs">

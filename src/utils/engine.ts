@@ -177,6 +177,8 @@ function hashStringToSeed(str: string): number {
 interface McScenarioSet {
   pairs: [cut: number, waitlistMargin: number][];
   lists: number[][];
+  notaMinimaEspera: number;
+  notaSegura: number;
 }
 const monteCarloCache = new Map<string, McScenarioSet>();
 
@@ -242,10 +244,12 @@ export function calculateCourseChance(
   const anoMaisRecente = validCutsWithYear[0]?.ano ?? new Date().getFullYear();
   const corteMaisRecente = validCutsWithYear[0]?.corte ?? 0;
 
-  // Trend Correction with Prudential Floor (Proteção contra Falso Otimismo):
-  // Se a série histórica recente for de ALTA (o corte mais recente subiu vs o anterior),
+  // Trend Correction with Inviolable Prudential Floor (Proteção contra Falso Otimismo):
+  // 1. Se a série histórica recente for de ALTA (o corte mais recente subiu vs o anterior),
   // aplicamos piso no último corte + extrapolação suave de momentum (50% do delta, máx +0.10).
-  // Se a série recente for de queda ou estabilidade, mantemos a média ponderada com decaimento.
+  // 2. Se a série recente for de queda ou estabilidade, mantemos piso inviolável no último corte
+  // (Math.max(corteMaisRecente, mediaPonderada)) para que anos antigos mais baixos não puxem
+  // a projeção abaixo da realidade mais recente observada (ex: Eletrotécnica 2026=8,44).
   let corteProjetado = mediaPonderada;
   if (validCutsWithYear.length >= 2) {
     const diffRecente = Number((corteMaisRecente - validCutsWithYear[1].corte).toFixed(2));
@@ -253,7 +257,7 @@ export function calculateCourseChance(
       const momentum = Math.min(0.10, Number((diffRecente * 0.5).toFixed(2)));
       corteProjetado = Math.min(10.0, Number((corteMaisRecente + momentum).toFixed(2)));
     } else {
-      corteProjetado = mediaPonderada;
+      corteProjetado = Math.max(corteMaisRecente, mediaPonderada);
     }
   } else if (validCutsWithYear.length === 1) {
     corteProjetado = corteMaisRecente;
@@ -293,15 +297,34 @@ export function calculateCourseChance(
   let scenarios = monteCarloCache.get(scenarioKey);
   if (!scenarios) {
     const rng = createMulberry32(hashStringToSeed(scenarioKey));
-    scenarios = { pairs: [], lists: yearMedias };
+    const pairs: [number, number][] = [];
+    const cuts1a: number[] = [];
+    const cutsEspera: number[] = [];
     for (let i = 0; i < NUM_SIMULATIONS; i++) {
       // Cutoff score in this simulated round, bounded between 5.0 and 10.0
       const rawCut = sampleNormal(rng, corteProjetado, s);
       const simulatedCut = Math.min(10.0, Math.max(5.0, rawCut));
       // Waitlist score decrease for subsequent calls (assumed SEDUC call turnover: 0.08 - 0.22 points)
       const waitlistMargin = 0.08 + rng() * 0.14;
-      scenarios.pairs.push([simulatedCut, waitlistMargin]);
+      pairs.push([simulatedCut, waitlistMargin]);
+      cuts1a.push(simulatedCut);
+      cutsEspera.push(simulatedCut - waitlistMargin);
     }
+    cuts1a.sort((a, b) => a - b);
+    cutsEspera.sort((a, b) => a - b);
+    // P85: 85% dos cortes simulados de 1ª chamada ficam abaixo ou iguais a este valor.
+    // Candidatos com nota >= notaSegura têm probabilidade >= 85% de aprovação direta.
+    const notaSegura = Number(cuts1a[Math.floor(NUM_SIMULATIONS * 0.85)].toFixed(2));
+    // P25: percentil 25 dos cortes da lista de espera.
+    // Candidatos a partir desta nota já têm probabilidade real (>= 25%) de convocação.
+    const notaMinimaEspera = Number(cutsEspera[Math.floor(NUM_SIMULATIONS * 0.25)].toFixed(2));
+
+    scenarios = {
+      pairs,
+      lists: yearMedias,
+      notaMinimaEspera,
+      notaSegura,
+    };
     monteCarloCache.set(scenarioKey, scenarios);
   }
 
@@ -388,10 +411,10 @@ export function calculateCourseChance(
   const prob1aChamada = Number(Math.min(rawProb1a, probabilidade).toFixed(1));
   const probListaEspera = Number(Math.max(0, probabilidade - prob1aChamada).toFixed(1));
 
-  // Safeguard: detect when the most recent cutoff strictly exceeds the projected weighted average
-  const alertaCorteRecenteSuperior = corteMaisRecente > 0 && corteMaisRecente > corteProjetado;
+  // Safeguard: detect when the most recent cutoff strictly exceeds the historical weighted average
+  const alertaCorteRecenteSuperior = corteMaisRecente > 0 && corteMaisRecente > mediaPonderada;
   const diferencaRecenteProjetado = alertaCorteRecenteSuperior
-    ? Number((corteMaisRecente - corteProjetado).toFixed(2))
+    ? Number((corteMaisRecente - mediaPonderada).toFixed(2))
     : 0;
 
   // Unified taxonomy & status pills: single source of truth across engine, dashboard, and planner
@@ -467,6 +490,8 @@ export function calculateCourseChance(
     corteMaisRecente,
     anoMaisRecente,
     corteProjetado,
+    notaMinimaEspera: scenarios.notaMinimaEspera,
+    notaSegura: scenarios.notaSegura,
     delta,
     probabilidade,
     probabilidadePrimeiraChamada: prob1aChamada,

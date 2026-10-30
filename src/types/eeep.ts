@@ -84,6 +84,8 @@ export interface ChanceResult {
   corteMaisRecente: number;
   anoMaisRecente: number;
   corteProjetado: number;
+  notaMinimaEspera: number;
+  notaSegura: number;
   delta: number;
   probabilidade: number;
   probabilidadePrimeiraChamada?: number;
