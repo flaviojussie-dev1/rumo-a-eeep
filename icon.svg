@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <!-- Background with subtle border -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect x="12" y="12" width="488" height="488" rx="116" stroke="url(#goldGrad)" stroke-width="4" stroke-opacity="0.35" fill="none" />
+  
+  <!-- Graduation Cap -->
+  <g filter="url(#shadow)">
+    <!-- Mortarboard Cap Diamond -->
+    <path d="M256 110 L410 185 L256 260 L102 185 Z" fill="#FFFFFF" />
+    <path d="M256 122 L390 185 L256 248 L122 185 Z" fill="#F8FAFC" />
+    <!-- Center Button -->
+    <circle cx="256" cy="185" r="10" fill="url(#goldGrad)" />
+    
+    <!-- Skull cap beneath -->
+    <path d="M170 220 L170 270 C170 310, 342 310, 342 270 L342 220 C316 238, 286 248, 256 248 C226 248, 196 238, 170 220 Z" fill="#E2E8F0" />
+    
+    <!-- Tassel -->
+    <path d="M256 185 C310 190, 385 210, 395 270 L405 270 L400 320 L390 320 Z" fill="url(#goldGrad)" />
+  </g>
+
+  <!-- Open Book Symbol (Bottom) -->
+  <g filter="url(#shadow)" transform="translate(0, 30)">
+    <path d="M256 310 C210 295, 150 295, 120 310 L120 380 C150 365, 210 365, 256 380 C302 365, 362 365, 392 380 L392 310 C362 295, 302 295, 256 310 Z" fill="#FFFFFF" />
+    <path d="M256 315 L256 385" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round" />
+    <!-- Page lines -->
+    <line x1="150" y1="330" x2="225" y2="330" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" />
+    <line x1="150" y1="345" x2="225" y2="345" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" />
+    <line x1="287" y1="330" x2="362" y2="330" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" />
+    <line x1="287" y1="345" x2="362" y2="345" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>
