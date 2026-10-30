@@ -168,12 +168,17 @@ function hashStringToSeed(str: string): number {
 }
 
 /**
- * Cache of simulated scenarios (cutoff, waitlist margin) per course+school+modality.
+ * Cache of simulated Monte Carlo scenarios per course+school+modality.
  * Reusing the exact same simulated cutoffs for every candidate grade is what makes
  * the probability curve strictly monotonic: P(nota) = share of simulated cuts <= nota.
+ * `lists` guarda as listas históricas reais de classificados (desc) para o bootstrap
+ * de colocação projetada.
  */
-type McScenario = [cut: number, waitlistMargin: number];
-const monteCarloCache = new Map<string, McScenario[]>();
+interface McScenarioSet {
+  pairs: [cut: number, waitlistMargin: number][];
+  lists: number[][];
+}
+const monteCarloCache = new Map<string, McScenarioSet>();
 
 /**
  * Box-Muller transform to sample from a Gaussian distribution N(mu, sigma^2).
@@ -200,6 +205,7 @@ export function calculateCourseChance(
 ): ChanceResult {
   const cortesPorAno: Record<number, number> = {};
   const validCutsWithYear: { ano: number; corte: number }[] = [];
+  const yearMedias: number[][] = [];
 
   for (const h of curso.historico) {
     const mod = h.modalidades[modalidade];
@@ -207,6 +213,9 @@ export function calculateCourseChance(
     if (cut > 0) {
       cortesPorAno[h.ano] = cut;
       validCutsWithYear.push({ ano: h.ano, corte: cut });
+      if (mod?.medias && mod.medias.length > 0) {
+        yearMedias.push([...mod.medias].sort((a, b) => b - a)); // desc, min no fim
+      }
     }
   }
 
@@ -284,27 +293,84 @@ export function calculateCourseChance(
   let scenarios = monteCarloCache.get(scenarioKey);
   if (!scenarios) {
     const rng = createMulberry32(hashStringToSeed(scenarioKey));
-    scenarios = [];
+    scenarios = { pairs: [], lists: yearMedias };
     for (let i = 0; i < NUM_SIMULATIONS; i++) {
       // Cutoff score in this simulated round, bounded between 5.0 and 10.0
       const rawCut = sampleNormal(rng, corteProjetado, s);
       const simulatedCut = Math.min(10.0, Math.max(5.0, rawCut));
       // Waitlist score decrease for subsequent calls (assumed SEDUC call turnover: 0.08 - 0.22 points)
       const waitlistMargin = 0.08 + rng() * 0.14;
-      scenarios.push([simulatedCut, waitlistMargin]);
+      scenarios.pairs.push([simulatedCut, waitlistMargin]);
     }
     monteCarloCache.set(scenarioKey, scenarios);
   }
 
   let aprovacoes1aChamada = 0;
   let convocacoesListaEspera = 0;
+  const colocacaoCenarios: number[] = [];
   for (let i = 0; i < NUM_SIMULATIONS; i++) {
-    const [simulatedCut, waitlistMargin] = scenarios[i];
+    const [simulatedCut, waitlistMargin] = scenarios.pairs[i];
     if (notaAluno >= simulatedCut) {
       aprovacoes1aChamada++;
+      // Colocação projetada: bootstrap — pareia o corte simulado com a lista
+      // histórica real de corte mais próximo (a lista já é o pool acima do corte;
+      // deslocá-la confundiria nível do corte com força dos concorrentes).
+      if (scenarios.lists.length > 0) {
+        let nearest = scenarios.lists[0];
+        let bestDiff = Infinity;
+        for (const l of scenarios.lists) {
+          const diff = Math.abs(simulatedCut - l[l.length - 1]);
+          if (diff < bestDiff) { bestDiff = diff; nearest = l; }
+        }
+        // pos = nº de médias estritamente acima da nota + 1 (busca binária na lista desc)
+        let lo = 0, hi = nearest.length;
+        while (lo < hi) {
+          const mid = (lo + hi) >> 1;
+          if (nearest[mid] > notaAluno) lo = mid + 1;
+          else hi = mid;
+        }
+        colocacaoCenarios.push(lo + 1);
+      }
     } else if (notaAluno >= simulatedCut - waitlistMargin) {
       convocacoesListaEspera++;
     }
+  }
+
+  // Colocação empírica: em qual posição a nota entraria em cada lista histórica real
+  let colocMelhor = Infinity;
+  let colocPior = 0;
+  let colocAnos = 0;
+  for (const medias of yearMedias) {
+    if (notaAluno < medias[medias.length - 1]) continue; // não passaria neste ano
+    const pos = medias.filter((m) => m > notaAluno).length + 1;
+    colocMelhor = Math.min(colocMelhor, pos);
+    colocPior = Math.max(colocPior, pos);
+    colocAnos++;
+  }
+  const colocacaoEmpirica =
+    colocAnos > 0 ? { melhor: colocMelhor, pior: colocPior, anos: colocAnos } : null;
+
+  // Colocação projetada: percentis dos cenários bootstrap em que o aluno passa.
+  // Posição é limitada (~<=50), então usamos contagem em baldes em vez de sort.
+  let colocacaoProjetada: { mediana: number; p25: number; p75: number } | null = null;
+  if (colocacaoCenarios.length > 0) {
+    const maxPos = Math.max(...colocacaoCenarios);
+    const buckets = new Array<number>(maxPos + 1).fill(0);
+    for (const p of colocacaoCenarios) buckets[p]++;
+    const pick = (q: number) => {
+      const target = Math.min(colocacaoCenarios.length, Math.max(1, Math.ceil(q * colocacaoCenarios.length)));
+      let acc = 0;
+      for (let pos = 1; pos <= maxPos; pos++) {
+        acc += buckets[pos];
+        if (acc >= target) return pos;
+      }
+      return maxPos;
+    };
+    colocacaoProjetada = {
+      mediana: pick(0.5),
+      p25: pick(0.25),
+      p75: pick(0.75),
+    };
   }
 
   const rawProb1a = (aprovacoes1aChamada / NUM_SIMULATIONS) * 100;
@@ -422,6 +488,8 @@ export function calculateCourseChance(
     statusPillBg,
     statusPillColor,
     statusPillBorder,
+    colocacaoEmpirica,
+    colocacaoProjetada,
   };
 }
 

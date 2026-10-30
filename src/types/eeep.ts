@@ -21,6 +21,8 @@ export interface ModalidadeStats {
   maior_nota: number;
   media_modalidade: number;
   inscritos?: number;
+  /** Médias de todos os classificados (desc), para estimativa de colocação. */
+  medias?: number[];
 }
 
 export interface AnoData {
@@ -58,6 +60,21 @@ export interface EscolaEEEP {
   descricaoBase?: string;
 }
 
+export interface ColocacaoEmpirica {
+  /** Melhor (menor) posição observada: nota entraria mais no topo da lista. */
+  melhor: number;
+  /** Pior (maior) posição observada entre os anos históricos. */
+  pior: number;
+  /** Quantos anos históricos sustentam a faixa. */
+  anos: number;
+}
+
+export interface ColocacaoProjetada {
+  mediana: number;
+  p25: number;
+  p75: number;
+}
+
 export interface ChanceResult {
   curso: CursoData;
   escola?: EscolaEEEP;
@@ -88,6 +105,10 @@ export interface ChanceResult {
   statusPillBg: string;
   statusPillColor: string;
   statusPillBorder: string;
+  /** Faixa de colocação entre os classificados, por ano histórico (dados reais). */
+  colocacaoEmpirica?: ColocacaoEmpirica | null;
+  /** Colocação projetada (bootstrap da lista histórica nos cenários Monte Carlo). */
+  colocacaoProjetada?: ColocacaoProjetada | null;
 }
 
 export interface EscolaSimulationResult {

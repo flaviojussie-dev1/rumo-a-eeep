@@ -830,6 +830,26 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
                           )}
                         </div>
 
+                        {/* Estimated placement */}
+                        {hasNota && (item.colocacaoEmpirica || item.colocacaoProjetada) && (
+                          <div className="mt-2 p-2.5 rounded-[12px] bg-page border border-line text-[11px] leading-relaxed text-muted-2">
+                            <strong className="text-navy font-bold">Sua colocação estimada:</strong>{' '}
+                            {item.colocacaoEmpirica && item.colocacaoEmpirica.melhor === item.colocacaoEmpirica.pior && (
+                              <>sua média entraria na {item.colocacaoEmpirica.melhor}º posição da lista de classificados de {item.colocacaoEmpirica.anos === 1 ? '2026' : `cada ano analisado (${item.colocacaoEmpirica.anos} anos)`}</>
+                            )}
+                            {item.colocacaoEmpirica && item.colocacaoEmpirica.melhor !== item.colocacaoEmpirica.pior && (
+                              <>sua média entraria entre a {item.colocacaoEmpirica.melhor}º e a {item.colocacaoEmpirica.pior}º posição das listas reais de classificados ({item.colocacaoEmpirica.anos} {item.colocacaoEmpirica.anos === 1 ? 'ano' : 'anos'})</>
+                            )}
+                            {!item.colocacaoEmpirica && item.colocacaoProjetada && (
+                              <>com base na projeção, sua média entraria por volta da {item.colocacaoProjetada.mediana}º posição da lista</>
+                            )}
+                            {item.colocacaoEmpirica && item.colocacaoProjetada && (
+                              <>; na projeção do próximo processo, por volta da {item.colocacaoProjetada.mediana}º posição{item.colocacaoProjetada.p25 !== item.colocacaoProjetada.p75 && ` (faixa provável: ${item.colocacaoProjetada.p25}º–${item.colocacaoProjetada.p75}º)`}</>
+                            )}
+                            . Posição entre os convocados — quem está abaixo do corte fica para a lista de espera.
+                          </div>
+                        )}
+
                         {/* Recommendation */}
                         <div className="text-xs text-ink bg-white p-2.5 rounded-[12px] border border-line leading-relaxed">
                           <strong className="text-navy font-bold">

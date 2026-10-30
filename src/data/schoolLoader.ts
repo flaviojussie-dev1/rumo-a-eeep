@@ -376,6 +376,7 @@ export function loadAllEscolasFromData(): EscolaEEEP[] {
               nota_corte,
               maior_nota,
               media_modalidade,
+              medias: [...validGrades].sort((a, b) => b - a), // p/ estimativa de colocação
             };
           } else {
             modalidadesStats[modKey] = {
