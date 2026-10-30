@@ -187,21 +187,29 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
           // Caso 1: Na cidade do aluno há chance viável (>= 25%)
           if (oracle.melhorNaCidade && oracle.melhorNaCidade.probabilidade >= 25) {
             return (
-              <div className="flex items-center justify-between gap-2 p-2.5 rounded-[12px] bg-page text-xs border border-line/60">
-                <span className="flex items-center gap-1.5 text-muted font-medium truncate">
-                  <MapPin className="w-3.5 h-3.5 text-navy flex-none" />
-                  <span>Melhor opção na sua cidade:</span>
-                  <strong className="text-ink truncate">{oracle.melhorNaCidade.curso.nome}</strong>
-                </span>
-                <span
-                  className={`font-bold shrink-0 ${
-                    oracle.melhorNaCidade.probabilidade >= 60
-                      ? 'text-folgado-fg'
-                      : 'text-disputa-fg'
-                  }`}
-                >
-                  {oracle.melhorNaCidade.probabilidade}% chance
-                </span>
+              <div className="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-[14px] bg-page text-xs border border-line/60">
+                <div className="flex items-start gap-2 min-w-0 flex-1">
+                  <MapPin className="w-4 h-4 text-navy flex-none mt-0.5" />
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[11px] text-muted font-medium block leading-none mb-1">
+                      Melhor opção na sua cidade
+                    </span>
+                    <strong className="text-ink font-bold text-xs sm:text-sm block leading-snug">
+                      {oracle.melhorNaCidade.curso.nome}
+                    </strong>
+                  </div>
+                </div>
+                <div className="flex-none text-right">
+                  <span
+                    className={`inline-flex items-center font-bold px-2.5 py-1 rounded-full text-xs border ${
+                      oracle.melhorNaCidade.probabilidade >= 60
+                        ? 'bg-emerald-50 text-folgado-fg border-emerald-200/60'
+                        : 'bg-amber-50 text-disputa-fg border-amber-200/60'
+                    }`}
+                  >
+                    {oracle.melhorNaCidade.probabilidade}% chance
+                  </span>
+                </div>
               </div>
             );
           }
@@ -209,17 +217,26 @@ export const ResultsDashboard: React.FC<ResultsDashboardProps> = ({
           // Caso 2: Na cidade do aluno a chance é baixa (< 25%), mas há boas chances na região!
           if (oracle.melhorGlobal && oracle.melhorGlobal.probabilidade >= 60) {
             return (
-              <div className="flex items-center justify-between gap-2 p-2.5 rounded-[12px] bg-page text-xs border border-line/60">
-                <span className="flex items-center gap-1.5 text-muted font-medium truncate">
-                  <Sparkles className="w-3.5 h-3.5 text-gold flex-none" />
-                  <span>Sua maior chance na região:</span>
-                  <strong className="text-ink truncate">
-                    {oracle.melhorGlobal.curso.nome} ({oracle.melhorGlobal.escola?.municipio})
-                  </strong>
-                </span>
-                <span className="font-bold shrink-0 text-folgado-fg">
-                  {oracle.melhorGlobal.probabilidade}% chance
-                </span>
+              <div className="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-[14px] bg-page text-xs border border-line/60">
+                <div className="flex items-start gap-2 min-w-0 flex-1">
+                  <Sparkles className="w-4 h-4 text-gold flex-none mt-0.5" />
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[11px] text-muted font-medium block leading-none mb-1">
+                      Sua maior chance na região
+                    </span>
+                    <strong className="text-ink font-bold text-xs sm:text-sm block leading-snug">
+                      {oracle.melhorGlobal.curso.nome}{' '}
+                      <span className="font-semibold text-muted text-xs">
+                        ({oracle.melhorGlobal.escola?.municipio})
+                      </span>
+                    </strong>
+                  </div>
+                </div>
+                <div className="flex-none text-right">
+                  <span className="inline-flex items-center font-bold px-2.5 py-1 rounded-full text-xs bg-emerald-50 text-folgado-fg border-emerald-200/60">
+                    {oracle.melhorGlobal.probabilidade}% chance
+                  </span>
+                </div>
               </div>
             );
           }
